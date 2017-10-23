@@ -54,3 +54,9 @@ extension Gender {
     }
 }
 
+extension Gender {
+    public override var description: String {
+        return "\(self.name ?? "")"
+    }
+}
+

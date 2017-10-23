@@ -38,7 +38,7 @@ open class FormCell:UITableViewCell {
         self.textLabel?.textColor = .black
     }
     
-    func setCellData(key: String, value: AnyObject){  }
+    func setCellData(key: String, value: AnyObject?){  }
     
     func getCellData()-> (key: String, value: AnyObject){
         let key = ""
@@ -89,8 +89,10 @@ open class TextViewCell: FormCell, UITextViewDelegate {
         textView.resignFirstResponder()
     }
     
-    override func setCellData(key: String, value: AnyObject){
-        self.textView.text! = value as! String
+    override func setCellData(key: String, value: AnyObject?){
+        if let vl = value {
+            self.textView.text! = vl as! String
+        }
     }
     
     override func getCellData()-> (key: String, value: AnyObject){
@@ -133,8 +135,9 @@ open class ImageCell: FormCell, UITextViewDelegate {
     }
     
     
-    override func setCellData(key: String, value: AnyObject){
-        fileName = value as! String
+    override func setCellData(key: String, value: AnyObject?){
+        guard let vl = value else { return }
+        fileName = vl as! String
         imgView.image = UIImage(named: fileName)
     }
     
@@ -183,7 +186,7 @@ open class TextCell: FormCell, UITextFieldDelegate {
         return true
     }
         
-    override func setCellData(key: String, value: AnyObject){
+    override func setCellData(key: String, value: AnyObject?){
         if let strValue = value as? String {
             self.textField.text! = strValue
         }
@@ -291,17 +294,18 @@ open class NumberCell: FormCell, UITextFieldDelegate {
         return true
     }
     
-    override func setCellData(key: String, value: AnyObject){
+    override func setCellData(key: String, value: AnyObject?){
+        guard let vl = value else { return }
         var strValue = ""
-        if value is String{
-            strValue = value as! String
+        if vl is String{
+            strValue = vl as! String
             numberFormatted.text! = strValue
-        } else if value is Double {
+        } else if vl is Double {
             strValue = String(format: "%\(0.2)f", (value as! Double))
             let f = NumberFormatter()
             f.numberStyle = .currency
             f.currencySymbol = ""
-            let num = NSNumber(value: value as! Double)
+            let num = NSNumber(value: vl as! Double)
             numberFormatted.text! = f.string(from: num)!
         }
         let charsNotToBeTrimmed = (0...9).map{String($0)}
@@ -332,9 +336,11 @@ open class IntCell : TextCell {
         textField.keyboardType = .numberPad
     }
     
-    override func setCellData(key: String, value: AnyObject){
-        let nf = NumberFormatter()
-        self.textField.text! = nf.string(from: value as! NSNumber)!
+    override func setCellData(key: String, value: AnyObject?){
+        if let vl = value {
+            let nf = NumberFormatter()
+            self.textField.text! = nf.string(from: vl as! NSNumber)!
+        }
     }
     
 }
@@ -465,7 +471,7 @@ open class DateCell : TextCell {
         // self.update?(sender.date)
     }
     
-    override func setCellData(key: String, value: AnyObject){
+    override func setCellData(key: String, value: AnyObject?){
         if let dateValue = value as? Date {
             self.datePicker.date = dateValue
             self.textField.text! = self.formatter.string(from: dateValue)
@@ -508,6 +514,17 @@ open class ButtonCell: FormCell, UITextFieldDelegate {
 
 
 open class LinkCell : FormCell {
+    
+    var selectedObject:AnyObject?{
+        didSet{
+            if let selected = self.selectedObject {
+                let dscrptn = (selected.description == "<null>") ? "" : selected.description!
+                self.valueLabel.text = "\(dscrptn)"
+            } else {
+                self.valueLabel.text = ""
+            }
+        }
+    }
     
     lazy var valueLabel:UILabel = {
         let l = UILabel()
@@ -557,15 +574,13 @@ open class LinkCell : FormCell {
         valueLabel.text = ""
     }
     
-    override func setCellData(key: String, value: AnyObject){
-        if let strValue = value as? String {
-            valueLabel.text = strValue
-        }
+    override func setCellData(key: String, value: AnyObject?){
+        selectedObject = value
     }
     
     override func getCellData()-> (key: String, value: AnyObject){
         let key = self.name!
-        let value = valueLabel.text as AnyObject
+        let value = selectedObject as AnyObject
         return(key, value)
     }
     
@@ -658,8 +673,8 @@ open class SliderCell: FormCell {
     }
     
     
-    override func setCellData(key: String, value: AnyObject){
-        if let v = value.floatValue {
+    override func setCellData(key: String, value: AnyObject?){
+        if let v = value?.floatValue {
             self.slider.value = v
             self.valueLabel.text = "\(Int(v)) % "
         }
@@ -712,8 +727,8 @@ open class SwitchCell:FormCell {
         self.addSubview(self.switchStack)
     }
     
-    override func setCellData(key: String, value: AnyObject){
-        let boolValue = value as! Bool
+    override func setCellData(key: String, value: AnyObject?){
+        guard let boolValue = value  as? Bool else { return }
         self.switcher.isOn = boolValue
     }
     
@@ -763,8 +778,8 @@ open class StepperCell:FormCell {
         self.addSubview(self.switchStack)
     }
     
-    override func setCellData(key: String, value: AnyObject){
-        if let dblValue = value.int64Value {
+    override func setCellData(key: String, value: AnyObject?){
+        if let dblValue = value?.int64Value {
             self.valueLabel.text = "\(Int(dblValue))"
             self.stepper.value = Double(dblValue)
         }

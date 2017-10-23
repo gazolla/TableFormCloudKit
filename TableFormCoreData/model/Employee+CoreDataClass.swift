@@ -61,7 +61,7 @@ extension Employee {
             , "company" : "" as AnyObject
             , "position" : "" as AnyObject
             , "salary" : 0.0 as AnyObject
-            , "gender" : "" as AnyObject]
+            , "gender" :  nil ]
     }
     
     func objToDic()->[String:AnyObject?]{

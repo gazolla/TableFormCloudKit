@@ -10,12 +10,12 @@ import UIKit
 import CoreData
 
 class EmployeeController: FormViewController {
-    
     var gender:Gender? {
         didSet{
-            if let cell = self.sections?[2][0], let gender = self.gender {
-                (cell as! LinkCell).valueLabel.text = gender.name
-            }
+            guard let gndr = gender else { return }
+            print("fndr: \(gndr)")
+            self.data!["gender"] = gndr as AnyObject
+            self.setFormData()
         }
     }
     
@@ -65,8 +65,9 @@ class EmployeeController: FormViewController {
                 cell.accessoryType = .checkmark
                 controller.selected = indexPath
             }
-            self.gender = controller.items[indexPath.item]
-            
+            let item:Gender = controller.items[indexPath.item]
+            print("gende: \(item)")
+            self.gender = item
             controller.navigationController?.popViewController(animated: true)
         }
         
@@ -93,6 +94,7 @@ class EmployeeController: FormViewController {
             cell?.isSelected = false
             if cell is LinkCell {
                 if (cell as! FormCell).name == "gender" {
+                    self?.view.endEditing(true)
                     self?.navigationController?.pushViewController(self!.genderList, animated: true)
                 }
             }
@@ -120,8 +122,7 @@ class EmployeeController: FormViewController {
     
     @objc func saveTapped(){
         guard let context = context else { return }
-        var dic = self.getFormData()
-        dic["gender"] = self.gender as AnyObject
+        let dic = self.getFormData()
         
         do{
             _ = try Employee.findOrCreate(dic:dic, in: context)

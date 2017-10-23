@@ -136,8 +136,8 @@ class FormViewController: UIViewController {
             var index:IndexPath? = IndexPath(row: 0, section: 0)
             while index != nil {
                 let cell = sections[(index! as NSIndexPath).section][(index! as NSIndexPath).item]
-                if  cell.name == key && value != nil {
-                    cell.setCellData(key: key, value: value!)
+                if  cell.name == key { //}&& value != nil {
+                    cell.setCellData(key: key, value: value)
                 }
                 index = self.incrementIndexPath(index!)
             }

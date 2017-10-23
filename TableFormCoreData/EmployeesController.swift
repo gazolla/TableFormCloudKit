@@ -59,6 +59,7 @@ class EmployeesController: UIViewController {
     
     @objc func addEmployeeTapped(){
         employeeCtrl.data = Employee.emptyDic()
+        employeeCtrl.gender = nil
         self.navigationController?.pushViewController(employeeCtrl, animated: true)
     }
     
@@ -110,7 +111,6 @@ extension EmployeesController:UITableViewDelegate {
         let employee = fetchedRstCtrl.object(at: indexPath)
         employeeCtrl.title = "Edit Employee"
         employeeCtrl.data = employee.objToDic()
-        employeeCtrl.gender = employee.gender
         self.navigationController?.pushViewController(employeeCtrl, animated: true)
     }
 }

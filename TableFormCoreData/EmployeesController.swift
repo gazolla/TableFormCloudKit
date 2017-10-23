@@ -59,7 +59,6 @@ class EmployeesController: UIViewController {
     
     @objc func addEmployeeTapped(){
         employeeCtrl.data = Employee.emptyDic()
-        employeeCtrl.gender = nil
         self.navigationController?.pushViewController(employeeCtrl, animated: true)
     }
     

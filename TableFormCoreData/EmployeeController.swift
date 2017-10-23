@@ -10,15 +10,6 @@ import UIKit
 import CoreData
 
 class EmployeeController: FormViewController {
-    var gender:Gender? {
-        didSet{
-            guard let gndr = gender else { return }
-            print("fndr: \(gndr)")
-            self.data!["gender"] = gndr as AnyObject
-            self.setFormData()
-        }
-    }
-    
     var context:NSManagedObjectContext?
     
     func createFieldsAndSections()->[[Field]]{
@@ -66,8 +57,8 @@ class EmployeeController: FormViewController {
                 controller.selected = indexPath
             }
             let item:Gender = controller.items[indexPath.item]
-            print("gende: \(item)")
-            self.gender = item
+            self.data!["gender"] = item
+            self.setFormData()
             controller.navigationController?.popViewController(animated: true)
         }
         
@@ -94,7 +85,6 @@ class EmployeeController: FormViewController {
             cell?.isSelected = false
             if cell is LinkCell {
                 if (cell as! FormCell).name == "gender" {
-                    self?.view.endEditing(true)
                     self?.navigationController?.pushViewController(self!.genderList, animated: true)
                 }
             }

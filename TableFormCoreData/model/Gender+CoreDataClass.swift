@@ -60,3 +60,16 @@ extension Gender {
     }
 }
 
+extension Gender {
+    public class func getGenders(context: NSManagedObjectContext)->[Gender] {
+        var entities = [Gender]()
+        let request:NSFetchRequest<Gender> = Gender.fetchRequest()
+        do{
+            entities = try context.fetch(request as! NSFetchRequest<NSFetchRequestResult>) as! [Gender]
+        } catch {
+            print(error)
+        }
+        return entities
+    }
+}
+

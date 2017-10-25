@@ -33,6 +33,7 @@ class TableViewController<Item>: UIViewController, UITableViewDelegate, UITableV
     var configureCell:((_ cell:UITableViewCell, _ item:Item, _ indexPath:IndexPath)->())?
     var selectedRow:((_ controller:TableViewController<Item>, _ indexPath:IndexPath)->())?
     var deselectedRow:((_ controller:TableViewController<Item>, _ indexPath:IndexPath)->())?
+    var viewWillAppear:((_ controller:TableViewController<Item>)->())?
     var selected:IndexPath?
     
     init(items:[Item], cellType:AnyClass){
@@ -65,6 +66,11 @@ class TableViewController<Item>: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(self.tableView)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewWillAppear?(self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

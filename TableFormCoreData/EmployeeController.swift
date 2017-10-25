@@ -31,24 +31,32 @@ class EmployeeController: FormViewController {
         return UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveTapped))
     }()
     
+    lazy var backButton: UIBarButtonItem = {
+        return UIBarButtonItem(title: "\u{25C0}Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(backTapped))
+    }()
+    
     lazy var genderList = { ()-> TableViewController<Gender> in
         let genders:[Gender] = {
-            var entities = [Gender]()
-            guard let context = context else { return entities}
-            let request:NSFetchRequest<Gender> = Gender.fetchRequest()
-            do{
-                entities = try context.fetch(request as! NSFetchRequest<NSFetchRequestResult>) as! [Gender]
-            } catch {
-                print(error)
-            }
-            return entities
+            guard let context = context else { return [Gender]()}
+            return Gender.getGenders(context:context)
         }()
         
         let genderList = TableViewController(items:genders, cellType: UITableViewCell.self)
         
         genderList.configureCell = { (cell, item, indexPath) in
             let item:Gender = item as Gender
-            cell.textLabel?.text = "\(item.name!)"
+            cell.textLabel?.text = "\(item)"
+            if  let gndr = self.data?["gender"] as? Gender {
+                if gndr == item {
+                    cell.accessoryType = .checkmark
+                } else {
+                    cell.accessoryType = .none
+                }
+            }
+        }
+        
+        genderList.viewWillAppear = { (controller) in
+            controller.tableView.reloadData()
         }
         
         genderList.selectedRow = { (controller, indexPath) in
@@ -69,9 +77,7 @@ class EmployeeController: FormViewController {
                 }
             }
         }
-        
         genderList.title = "Gender"
-        
         return genderList
     }()
     
@@ -102,14 +108,14 @@ class EmployeeController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Employee"
+        print("disablesAutomaticKeyboardDismissal \(disablesAutomaticKeyboardDismissal)")
+        navigationItem.hidesBackButton = true
         navigationItem.rightBarButtonItem = saveButton
+        navigationItem.leftBarButtonItem = backButton
         navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self as UIGestureRecognizerDelegate
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
+
     @objc func saveTapped(){
         guard let context = context else { return }
         let dic = self.getFormData()
@@ -120,7 +126,24 @@ class EmployeeController: FormViewController {
         } catch {
             print(error)
         }
-        
+        self.view.endEditing(true)
         navigationController?.popViewController(animated: true)
     }
+    
+    @objc func backTapped(){
+        self.view.endEditing(true)
+        navigationController?.popViewController(animated: true)
+    }
+}
+
+extension EmployeeController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        self.view.endEditing(true)
+        return (otherGestureRecognizer is UIScreenEdgePanGestureRecognizer)
+    }
+
 }

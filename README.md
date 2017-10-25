@@ -8,7 +8,7 @@ Sample code using TableForm and Core Data
 
 ## Installing
 
-All dependeces are in the Xcode project.
+All dependences are in the Xcode project.
 
 ### Contact
 

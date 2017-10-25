@@ -1,8 +1,6 @@
 # TableFormCoreData
 Sample code using TableForm and Core Data
 
-![](https://github.com/gazolla/TableForm/raw/master/screenshot.png)
-
 ## Supported Platforms
 
 - iOS 11

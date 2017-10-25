@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		08AB7E981FA0CEF300E6D05C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 08AB7E971FA0CEF300E6D05C /* README.md */; };
+		08AB7E9A1FA12FDA00E6D05C /* TableFormCoreDataMini.png in Resources */ = {isa = PBXBuildFile; fileRef = 08AB7E991FA12FDA00E6D05C /* TableFormCoreDataMini.png */; };
 		C3BC5DFC1F94D6E900209D21 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BC5DFB1F94D6E900209D21 /* CoreDataManager.swift */; };
 		C3DEA42D1F8E4A260005A89D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEA42C1F8E4A260005A89D /* AppDelegate.swift */; };
 		C3DEA4301F8E4A260005A89D /* TableFormCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C3DEA42E1F8E4A260005A89D /* TableFormCoreData.xcdatamodeld */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		08AB7E971FA0CEF300E6D05C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		08AB7E991FA12FDA00E6D05C /* TableFormCoreDataMini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableFormCoreDataMini.png; sourceTree = "<group>"; };
 		C3BC5DFB1F94D6E900209D21 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		C3DEA4291F8E4A260005A89D /* TableFormCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableFormCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3DEA42C1F8E4A260005A89D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		C3DEA4201F8E4A250005A89D = {
 			isa = PBXGroup;
 			children = (
+				08AB7E991FA12FDA00E6D05C /* TableFormCoreDataMini.png */,
 				08AB7E971FA0CEF300E6D05C /* README.md */,
 				C3DEA42B1F8E4A260005A89D /* TableFormCoreData */,
 				C3DEA42A1F8E4A260005A89D /* Products */,
@@ -188,6 +191,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08AB7E9A1FA12FDA00E6D05C /* TableFormCoreDataMini.png in Resources */,
 				08AB7E981FA0CEF300E6D05C /* README.md in Resources */,
 				C3DEA4321F8E4A260005A89D /* Assets.xcassets in Resources */,
 				C3DEA4351F8E4A260005A89D /* LaunchScreen.storyboard in Resources */,

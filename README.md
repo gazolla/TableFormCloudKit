@@ -1,6 +1,8 @@
 # TableFormCoreData
 Sample code using TableForm and Core Data
 
+![](https://github.com/gazolla/TableForm/raw/master/TableFormCoreDataMini.png)
+
 ## Supported Platforms
 
 - iOS 11
@@ -8,7 +10,7 @@ Sample code using TableForm and Core Data
 
 ## Installing
 
-All dependences are in the Xcode project.
+All dependencies are in the Xcode project.
 
 ### Contact
 

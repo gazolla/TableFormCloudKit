@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0819BF0B1FA20EA800AA7706 /* EmployeeController.png in Resources */ = {isa = PBXBuildFile; fileRef = 0819BF0A1FA20EA800AA7706 /* EmployeeController.png */; };
-		0819BF0D1FA20EB200AA7706 /* EmployeesController.png in Resources */ = {isa = PBXBuildFile; fileRef = 0819BF0C1FA20EB200AA7706 /* EmployeesController.png */; };
+		0819BF0F1FA2104800AA7706 /* Controllers.png in Resources */ = {isa = PBXBuildFile; fileRef = 0819BF0E1FA2104800AA7706 /* Controllers.png */; };
 		08AB7E981FA0CEF300E6D05C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 08AB7E971FA0CEF300E6D05C /* README.md */; };
 		08AB7E9A1FA12FDA00E6D05C /* TableFormCoreDataMini.png in Resources */ = {isa = PBXBuildFile; fileRef = 08AB7E991FA12FDA00E6D05C /* TableFormCoreDataMini.png */; };
 		C3BC5DFC1F94D6E900209D21 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BC5DFB1F94D6E900209D21 /* CoreDataManager.swift */; };
@@ -29,8 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0819BF0A1FA20EA800AA7706 /* EmployeeController.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EmployeeController.png; sourceTree = "<group>"; };
-		0819BF0C1FA20EB200AA7706 /* EmployeesController.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EmployeesController.png; sourceTree = "<group>"; };
+		0819BF0E1FA2104800AA7706 /* Controllers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Controllers.png; sourceTree = "<group>"; };
 		08AB7E971FA0CEF300E6D05C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		08AB7E991FA12FDA00E6D05C /* TableFormCoreDataMini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableFormCoreDataMini.png; sourceTree = "<group>"; };
 		C3BC5DFB1F94D6E900209D21 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -104,8 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				08AB7E991FA12FDA00E6D05C /* TableFormCoreDataMini.png */,
-				0819BF0A1FA20EA800AA7706 /* EmployeeController.png */,
-				0819BF0C1FA20EB200AA7706 /* EmployeesController.png */,
+				0819BF0E1FA2104800AA7706 /* Controllers.png */,
 				08AB7E971FA0CEF300E6D05C /* README.md */,
 				C3DEA42B1F8E4A260005A89D /* TableFormCoreData */,
 				C3DEA42A1F8E4A260005A89D /* Products */,
@@ -199,9 +196,8 @@
 			files = (
 				08AB7E9A1FA12FDA00E6D05C /* TableFormCoreDataMini.png in Resources */,
 				08AB7E981FA0CEF300E6D05C /* README.md in Resources */,
+				0819BF0F1FA2104800AA7706 /* Controllers.png in Resources */,
 				C3DEA4321F8E4A260005A89D /* Assets.xcassets in Resources */,
-				0819BF0D1FA20EB200AA7706 /* EmployeesController.png in Resources */,
-				0819BF0B1FA20EA800AA7706 /* EmployeeController.png in Resources */,
 				C3DEA4351F8E4A260005A89D /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

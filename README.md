@@ -1,5 +1,7 @@
 # TableFormCoreData
 Sample code using TableForm and Core Data
+![](https://github.com/gazolla/TableFormCoreData/raw/master/EmployeesController.png)
+![](https://github.com/gazolla/TableFormCoreData/raw/master/EmployeeController.png)
 
 ![](https://github.com/gazolla/TableFormCoreData/raw/master/TableFormCoreDataMini.png)
 

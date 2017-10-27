@@ -9,8 +9,6 @@
 import UIKit
 import CoreData
 
-import CoreData
-
 class EmployeesController: UIViewController {
     
     var context:NSManagedObjectContext?
@@ -40,21 +38,25 @@ class EmployeesController: UIViewController {
     }()
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    fileprivate func loadData() {
         guard let fetchedRstCtrl = self.fetchedResultsController else { return }
-        self.view.addSubview(tableView)
-        title = "Employees"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        let btn = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addEmployeeTapped))
-        self.navigationItem.rightBarButtonItem = btn
-        
         do {
             try fetchedRstCtrl.performFetch()
         } catch {
             print("Unable to Perform Fetch Request")
             print("\(error), \(error.localizedDescription)")
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.addSubview(tableView)
+        title = "Employees"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        let btn = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addEmployeeTapped))
+        self.navigationItem.rightBarButtonItem = btn
+        
+        loadData()
     }
     
     @objc func addEmployeeTapped(){

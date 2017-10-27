@@ -35,6 +35,16 @@ class EmployeeController: FormViewController {
         return UIBarButtonItem(title: "\u{25C0}Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(backTapped))
     }()
     
+    lazy override var selectedRow:((_ form:FormViewController, _ indexPath:IndexPath)->())? = { [weak self] (form,indexPath) in
+        let cell = form.tableView.cellForRow(at: indexPath)
+        cell?.isSelected = false
+        if cell is LinkCell {
+            if (cell as! FormCell).name == "gender" {
+                self?.navigationController?.pushViewController(self!.genderList, animated: true)
+            }
+        }
+    }
+    
     lazy var genderList = { ()-> TableViewController<Gender> in
         let genders:[Gender] = {
             guard let context = context else { return [Gender]()}
@@ -86,15 +96,6 @@ class EmployeeController: FormViewController {
         let its = createFieldsAndSections()
         self.items = its
         self.sections = buildCells(items: its)
-        self.selectedRow = { [weak self] (form:FormViewController,indexPath:IndexPath) in
-            let cell = form.tableView.cellForRow(at: indexPath)
-            cell?.isSelected = false
-            if cell is LinkCell {
-                if (cell as! FormCell).name == "gender" {
-                    self?.navigationController?.pushViewController(self!.genderList, animated: true)
-                }
-            }
-        }
     }
     
     override init(config:ConfigureForm){
@@ -108,7 +109,6 @@ class EmployeeController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Employee"
-        print("disablesAutomaticKeyboardDismissal \(disablesAutomaticKeyboardDismissal)")
         navigationItem.hidesBackButton = true
         navigationItem.rightBarButtonItem = saveButton
         navigationItem.leftBarButtonItem = backButton

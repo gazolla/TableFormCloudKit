@@ -1,7 +1,7 @@
 # TableFormCoreData
-Sample code using  [TableForm](https://github.com/gazolla/TableForm) and [Core Data](https://developer.apple.com/documentation/coredata). [TableForm](https://github.com/gazolla/TableForm) is a set of classes to create data entry forms for iOS using UITableViews. This sample contains three Controllers:
+Sample code using  [TableForm](https://github.com/gazolla/TableForm) and [Core Data](https://developer.apple.com/documentation/coredata). TableForm is a set of classes to create data entry forms for iOS using UITableViews. This sample contains three Controllers:
 - `EmployeesController` : This is a [UITableView](https://developer.apple.com/documentation/uikit/uitableview) with a [NSFetchedResultsController](https://developer.apple.com/documentation/coredata/nsfetchedresultscontroller).
-- `EmployeeController` : This is a  [FormViewController](https://github.com/gazolla/TableFormCoreData/blob/master/TableFormCoreData/TableForm/FormViewController.swift) where you can add or edit an Employee register .
+- `EmployeeController` : This is a  [FormViewController](https://github.com/gazolla/TableFormCoreData/blob/master/TableFormCoreData/TableForm/FormViewController.swift) where you can add or edit an Employee data.
 - `GenderList` : This is a [TableViewController](https://github.com/gazolla/TableFormCoreData/blob/master/TableFormCoreData/GenericTableView/TableViewController.swift) where you can select a gender.
 
 ![](https://github.com/gazolla/TableFormCoreData/raw/master/Controllers.png)

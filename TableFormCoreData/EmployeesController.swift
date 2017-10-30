@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class EmployeesController: UIViewController {
+class EmployeesController: UITableViewController {
     
     var context:NSManagedObjectContext?
     
@@ -18,16 +18,7 @@ class EmployeesController: UIViewController {
         ec.context = self.context
         return ec
     }()
-    
-    lazy var tableView:UITableView = {
-        let tv = UITableView(frame: self.view.bounds, style: .plain)
-        tv.translatesAutoresizingMaskIntoConstraints = false
-        tv.delegate = self
-        tv.dataSource = self
-        tv.register(EmployeeCell.self, forCellReuseIdentifier:"cellid")
-        return tv
-    }()
-    
+
     lazy var fetchedResultsController: NSFetchedResultsController<Employee>? = {
         guard let context = context else { return nil }
         let fetchRequest: NSFetchRequest<Employee> = Employee.fetchRequest()
@@ -50,7 +41,10 @@ class EmployeesController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.addSubview(tableView)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(EmployeeCell.self, forCellReuseIdentifier:"cellid")
+        
         title = "Employees"
         navigationController?.navigationBar.prefersLargeTitles = true
         let btn = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addEmployeeTapped))
@@ -64,27 +58,20 @@ class EmployeesController: UIViewController {
         self.navigationController?.pushViewController(employeeCtrl, animated: true)
     }
     
-    override func updateViewConstraints() {
-        super.updateViewConstraints()
-        tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        tableView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
-        tableView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
-    }
 }
 
-extension EmployeesController:UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
+extension EmployeesController {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         guard let fetchedRstCtrl = self.fetchedResultsController, let sections = fetchedRstCtrl.sections else { return 0 }
         return sections.count
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let fetchedRstCtrl = self.fetchedResultsController, let section = fetchedRstCtrl.sections?[section] else { return 0 }
         return section.numberOfObjects
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellid", for: indexPath) as! EmployeeCell
         guard let fetchedRstCtrl = self.fetchedResultsController else { return cell }
         let employee = fetchedRstCtrl.object(at: indexPath)
@@ -92,7 +79,7 @@ extension EmployeesController:UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         guard editingStyle == .delete else { return }
         guard let fetchedRstCtrl = self.fetchedResultsController, let context = context else { return }
         let note = fetchedRstCtrl.object(at: indexPath)
@@ -106,8 +93,8 @@ extension EmployeesController:UITableViewDataSource {
     
 }
 
-extension EmployeesController:UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+extension EmployeesController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let fetchedRstCtrl = self.fetchedResultsController else { return }
         let employee = fetchedRstCtrl.object(at: indexPath)
         employeeCtrl.title = "Edit Employee"

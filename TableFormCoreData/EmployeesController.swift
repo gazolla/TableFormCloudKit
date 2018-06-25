@@ -54,7 +54,7 @@ class EmployeesController: UITableViewController {
     }
     
     @objc func addEmployeeTapped(){
-        employeeCtrl.data = Employee.emptyDic()
+        employeeCtrl.data = Employee().emptyDic()
         self.navigationController?.pushViewController(employeeCtrl, animated: true)
     }
     

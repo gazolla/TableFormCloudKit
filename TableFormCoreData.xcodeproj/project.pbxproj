@@ -10,6 +10,7 @@
 		0819BF0F1FA2104800AA7706 /* Controllers.png in Resources */ = {isa = PBXBuildFile; fileRef = 0819BF0E1FA2104800AA7706 /* Controllers.png */; };
 		08AB7E981FA0CEF300E6D05C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 08AB7E971FA0CEF300E6D05C /* README.md */; };
 		08AB7E9A1FA12FDA00E6D05C /* TableFormCoreDataMini.png in Resources */ = {isa = PBXBuildFile; fileRef = 08AB7E991FA12FDA00E6D05C /* TableFormCoreDataMini.png */; };
+		08D8AE8420E06C28002B06D1 /* FormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D8AE8320E06C28002B06D1 /* FormModel.swift */; };
 		C3BC5DFC1F94D6E900209D21 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BC5DFB1F94D6E900209D21 /* CoreDataManager.swift */; };
 		C3DEA42D1F8E4A260005A89D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEA42C1F8E4A260005A89D /* AppDelegate.swift */; };
 		C3DEA4301F8E4A260005A89D /* TableFormCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C3DEA42E1F8E4A260005A89D /* TableFormCoreData.xcdatamodeld */; };
@@ -21,16 +22,15 @@
 		C3DEA4441F8E4A440005A89D /* FormCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEA43F1F8E4A440005A89D /* FormCells.swift */; };
 		C3DEA4451F8E4A440005A89D /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEA4401F8E4A440005A89D /* FormViewController.swift */; };
 		C3DEA4471F8E4B050005A89D /* EmployeesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEA4461F8E4B050005A89D /* EmployeesController.swift */; };
-		C3DEA45C1F8E530E0005A89D /* Employee+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEA4581F8E530E0005A89D /* Employee+CoreDataClass.swift */; };
-		C3DEA45D1F8E530E0005A89D /* Employee+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEA4591F8E530E0005A89D /* Employee+CoreDataProperties.swift */; };
-		C3DEA45E1F8E530E0005A89D /* Gender+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEA45A1F8E530E0005A89D /* Gender+CoreDataClass.swift */; };
-		C3DEA45F1F8E530E0005A89D /* Gender+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEA45B1F8E530E0005A89D /* Gender+CoreDataProperties.swift */; };
+		C3DEA45C1F8E530E0005A89D /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEA4581F8E530E0005A89D /* Employee.swift */; };
+		C3DEA45E1F8E530E0005A89D /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEA45A1F8E530E0005A89D /* Gender.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0819BF0E1FA2104800AA7706 /* Controllers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Controllers.png; sourceTree = "<group>"; };
 		08AB7E971FA0CEF300E6D05C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		08AB7E991FA12FDA00E6D05C /* TableFormCoreDataMini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableFormCoreDataMini.png; sourceTree = "<group>"; };
+		08D8AE8320E06C28002B06D1 /* FormModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormModel.swift; sourceTree = "<group>"; };
 		C3BC5DFB1F94D6E900209D21 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		C3DEA4291F8E4A260005A89D /* TableFormCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableFormCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3DEA42C1F8E4A260005A89D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,10 +44,8 @@
 		C3DEA43F1F8E4A440005A89D /* FormCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormCells.swift; sourceTree = "<group>"; };
 		C3DEA4401F8E4A440005A89D /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		C3DEA4461F8E4B050005A89D /* EmployeesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesController.swift; sourceTree = "<group>"; };
-		C3DEA4581F8E530E0005A89D /* Employee+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Employee+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C3DEA4591F8E530E0005A89D /* Employee+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Employee+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C3DEA45A1F8E530E0005A89D /* Gender+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gender+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C3DEA45B1F8E530E0005A89D /* Gender+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gender+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C3DEA4581F8E530E0005A89D /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		C3DEA45A1F8E530E0005A89D /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +62,8 @@
 		C3BC5DF71F94CDC800209D21 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				C3DEA4581F8E530E0005A89D /* Employee+CoreDataClass.swift */,
-				C3DEA4591F8E530E0005A89D /* Employee+CoreDataProperties.swift */,
-				C3DEA45A1F8E530E0005A89D /* Gender+CoreDataClass.swift */,
-				C3DEA45B1F8E530E0005A89D /* Gender+CoreDataProperties.swift */,
+				C3DEA4581F8E530E0005A89D /* Employee.swift */,
+				C3DEA45A1F8E530E0005A89D /* Gender.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -78,6 +74,7 @@
 				C3DEA43F1F8E4A440005A89D /* FormCells.swift */,
 				C3DEA43E1F8E4A440005A89D /* FormView.swift */,
 				C3DEA4401F8E4A440005A89D /* FormViewController.swift */,
+				08D8AE8320E06C28002B06D1 /* FormModel.swift */,
 			);
 			path = TableForm;
 			sourceTree = "<group>";
@@ -162,7 +159,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Sebastiao Gazolla Costa Junior";
 				TargetAttributes = {
 					C3DEA4281F8E4A260005A89D = {
@@ -210,18 +207,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3DEA4421F8E4A440005A89D /* EmployeeController.swift in Sources */,
-				C3DEA45C1F8E530E0005A89D /* Employee+CoreDataClass.swift in Sources */,
-				C3DEA45F1F8E530E0005A89D /* Gender+CoreDataProperties.swift in Sources */,
+				C3DEA45C1F8E530E0005A89D /* Employee.swift in Sources */,
 				C3DEA4441F8E4A440005A89D /* FormCells.swift in Sources */,
 				C3DEA4451F8E4A440005A89D /* FormViewController.swift in Sources */,
 				C3DEA4471F8E4B050005A89D /* EmployeesController.swift in Sources */,
 				C3DEA42D1F8E4A260005A89D /* AppDelegate.swift in Sources */,
+				08D8AE8420E06C28002B06D1 /* FormModel.swift in Sources */,
 				C3BC5DFC1F94D6E900209D21 /* CoreDataManager.swift in Sources */,
-				C3DEA45E1F8E530E0005A89D /* Gender+CoreDataClass.swift in Sources */,
+				C3DEA45E1F8E530E0005A89D /* Gender.swift in Sources */,
 				C3DEA4431F8E4A440005A89D /* FormView.swift in Sources */,
 				C3DEA4411F8E4A440005A89D /* TableViewController.swift in Sources */,
 				C3DEA4301F8E4A260005A89D /* TableFormCoreData.xcdatamodeld in Sources */,
-				C3DEA45D1F8E530E0005A89D /* Employee+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +249,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -260,6 +257,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -310,6 +308,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -317,6 +316,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

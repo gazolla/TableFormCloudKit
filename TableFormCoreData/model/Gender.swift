@@ -11,7 +11,14 @@ import Foundation
 import CoreData
 
 @objc(Gender)
-public class Gender: NSManagedObject {
+public class Gender: ManagedObject {
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Gender> {
+        return NSFetchRequest<Gender>(entityName: "Gender")
+    }
+    
+    @NSManaged public var name: String?
+    @NSManaged public var employees: NSSet?
+
     class func findOrCreate(dic:[String:AnyObject], in context:NSManagedObjectContext) throws -> Gender?{
         let request:NSFetchRequest<Gender> = Gender.fetchRequest()
         
@@ -32,26 +39,12 @@ public class Gender: NSManagedObject {
             throw error
         }
         
-        let gender:Gender = DicToObj(context: context, dic: dic)
+        var gender:Gender = Gender(context: context)
+        dicToObj(obj: &gender, dic: dic)
         return gender
         
     }
 
-}
-
-extension Gender {
-    func ObjToDic()->[String:AnyObject]{
-        return ["name" : self.name as AnyObject
-            , "employees" : self.name as AnyObject]
-    }
-    
-    class func DicToObj(context: NSManagedObjectContext, dic:[String:AnyObject])->Gender {
-        let gender = Gender(context: context)
-        gender.name = dic["name"] as? String
-        gender.employees = dic["employees"] as? NSSet
-        
-        return gender
-    }
 }
 
 extension Gender {

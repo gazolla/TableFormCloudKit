@@ -599,7 +599,7 @@ open class ImageLinkCell : FormCell {
         }
     }
     
-    lazy override open var imageView:UIImageView = {
+    lazy open var imgView:UIImageView = {
         let imgView = UIImageView()
         imgView.backgroundColor = .white
         imgView.contentMode = .scaleAspectFit
@@ -628,13 +628,13 @@ open class ImageLinkCell : FormCell {
         super.setup()
         accessoryType = .disclosureIndicator
         editingAccessoryType =  .none
-        addSubview(imageView)
+        addSubview(imgView)
     }
     
     open override func updateConstraints() {
         super.updateConstraints()
-        addConstraintsWithFormat("V:|-3-[v0]-3-|", views:imageView)
-        addConstraintsWithFormat("H:|-100-[v0]-5-|", views:imageView)
+        addConstraintsWithFormat("V:|-3-[v0]-3-|", views:imgView)
+        addConstraintsWithFormat("H:|-100-[v0]-5-|", views:imgView)
     }
     
     override func setCellData(key: String, value: AnyObject?){

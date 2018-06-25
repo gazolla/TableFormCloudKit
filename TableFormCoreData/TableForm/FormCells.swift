@@ -302,11 +302,8 @@ open class NumberCell: FormCell, UITextFieldDelegate {
             numberFormatted.text! = strValue
         } else if vl is Double {
             strValue = String(format: "%\(0.2)f", (value as! Double))
-            let f = NumberFormatter()
-            f.numberStyle = .currency
-            f.currencySymbol = ""
-            let num = NSNumber(value: vl as! Double)
-            numberFormatted.text! = f.string(from: num)!
+            let num = NSNumber(value: Double(strValue)!)
+            numberFormatted.text! = formatter.string(from: num)!
         }
         let charsNotToBeTrimmed = (0...9).map{String($0)}
         for i in strValue{
@@ -540,7 +537,6 @@ open class LinkCell : FormCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style:.value1, reuseIdentifier: reuseIdentifier)
         self.setup()
-        textLabel?.textColor = .black
     }
     
     required  public init?(coder aDecoder: NSCoder) {

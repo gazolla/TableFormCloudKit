@@ -28,8 +28,8 @@ public struct ConfigureForm{
     var selectedRow:((_ form:FormViewController, _ indexPath:IndexPath)->())?
     var configureCell:((_ cell:FormCell, _ item:Field)->())?
 
-    init (items:[[Field]], selectedRow:((_ form:FormViewController, _ indexPath:IndexPath)->())?=nil, configureCell:((_ cell:UITableViewCell, _ item:Field)->())?=nil){
-        self.fields = items
+    init (fields:[[Field]], selectedRow:((_ form:FormViewController, _ indexPath:IndexPath)->())?=nil, configureCell:((_ cell:UITableViewCell, _ item:Field)->())?=nil){
+        self.fields = fields
         self.selectedRow = selectedRow
         self.configureCell = configureCell
     }
@@ -155,6 +155,11 @@ class FormViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
         self.view.addSubview(self.tableView)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        _ = setFormData()
     }
     
     override func viewDidAppear(_ animated: Bool) {

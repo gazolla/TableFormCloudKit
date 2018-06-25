@@ -14,8 +14,11 @@ class FormView: UITableView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.completion?()
     }
     
-
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        print("FormView: UITableView => draw")
+        self.completion?()
+    }
 }

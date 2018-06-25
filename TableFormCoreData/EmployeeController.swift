@@ -94,7 +94,7 @@ class EmployeeController: FormViewController {
     override init(){
         super.init()
         let its = createFieldsAndSections()
-        self.items = its
+        self.fields = its
         self.sections = buildCells(items: its)
     }
     

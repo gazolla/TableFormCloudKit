@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0819BF0F1FA2104800AA7706 /* Controllers.png in Resources */ = {isa = PBXBuildFile; fileRef = 0819BF0E1FA2104800AA7706 /* Controllers.png */; };
+		0854C67F20E8652800055616 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0854C67E20E8652800055616 /* Default-568h@2x.png */; };
 		08AB7E981FA0CEF300E6D05C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 08AB7E971FA0CEF300E6D05C /* README.md */; };
 		08AB7E9A1FA12FDA00E6D05C /* TableFormCoreDataMini.png in Resources */ = {isa = PBXBuildFile; fileRef = 08AB7E991FA12FDA00E6D05C /* TableFormCoreDataMini.png */; };
+		08B96D542121C83F0050678C /* CloudKitOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B96D522121C83F0050678C /* CloudKitOperations.swift */; };
+		08B96D582121CA590050678C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B96D572121CA590050678C /* CloudKit.framework */; };
 		08D8AE8420E06C28002B06D1 /* FormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D8AE8320E06C28002B06D1 /* FormModel.swift */; };
-		C3BC5DFC1F94D6E900209D21 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BC5DFB1F94D6E900209D21 /* CoreDataManager.swift */; };
 		C3DEA42D1F8E4A260005A89D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEA42C1F8E4A260005A89D /* AppDelegate.swift */; };
 		C3DEA4301F8E4A260005A89D /* TableFormCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C3DEA42E1F8E4A260005A89D /* TableFormCoreData.xcdatamodeld */; };
 		C3DEA4321F8E4A260005A89D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3DEA4311F8E4A260005A89D /* Assets.xcassets */; };
@@ -22,17 +24,19 @@
 		C3DEA4441F8E4A440005A89D /* FormCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEA43F1F8E4A440005A89D /* FormCells.swift */; };
 		C3DEA4451F8E4A440005A89D /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEA4401F8E4A440005A89D /* FormViewController.swift */; };
 		C3DEA4471F8E4B050005A89D /* EmployeesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEA4461F8E4B050005A89D /* EmployeesController.swift */; };
-		C3DEA45C1F8E530E0005A89D /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEA4581F8E530E0005A89D /* Employee.swift */; };
-		C3DEA45E1F8E530E0005A89D /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DEA45A1F8E530E0005A89D /* Gender.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0819BF0E1FA2104800AA7706 /* Controllers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Controllers.png; sourceTree = "<group>"; };
+		0854C67E20E8652800055616 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		08AB7E971FA0CEF300E6D05C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		08AB7E991FA12FDA00E6D05C /* TableFormCoreDataMini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableFormCoreDataMini.png; sourceTree = "<group>"; };
+		08B96D522121C83F0050678C /* CloudKitOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitOperations.swift; sourceTree = "<group>"; };
+		08B96D532121C83F0050678C /* CloudKit101.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = CloudKit101.entitlements; sourceTree = "<group>"; };
+		08B96D552121CA510050678C /* TableFormCloudKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TableFormCloudKit.entitlements; sourceTree = "<group>"; };
+		08B96D572121CA590050678C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		08D8AE8320E06C28002B06D1 /* FormModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormModel.swift; sourceTree = "<group>"; };
-		C3BC5DFB1F94D6E900209D21 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		C3DEA4291F8E4A260005A89D /* TableFormCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableFormCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3DEA4291F8E4A260005A89D /* TableFormCloudKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableFormCloudKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3DEA42C1F8E4A260005A89D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3DEA42F1F8E4A260005A89D /* TableFormCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TableFormCoreData.xcdatamodel; sourceTree = "<group>"; };
 		C3DEA4311F8E4A260005A89D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,8 +48,6 @@
 		C3DEA43F1F8E4A440005A89D /* FormCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormCells.swift; sourceTree = "<group>"; };
 		C3DEA4401F8E4A440005A89D /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		C3DEA4461F8E4B050005A89D /* EmployeesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesController.swift; sourceTree = "<group>"; };
-		C3DEA4581F8E530E0005A89D /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
-		C3DEA45A1F8E530E0005A89D /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,19 +55,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08B96D582121CA590050678C /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C3BC5DF71F94CDC800209D21 /* model */ = {
+		08B96D562121CA590050678C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C3DEA4581F8E530E0005A89D /* Employee.swift */,
-				C3DEA45A1F8E530E0005A89D /* Gender.swift */,
+				08B96D572121CA590050678C /* CloudKit.framework */,
 			);
-			path = model;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C3BC5DF81F94CDDD00209D21 /* TableForm */ = {
@@ -87,40 +89,43 @@
 			path = GenericTableView;
 			sourceTree = "<group>";
 		};
-		C3BC5DFA1F94D6D800209D21 /* CoreData */ = {
+		C3BC5DFA1F94D6D800209D21 /* CloudKit */ = {
 			isa = PBXGroup;
 			children = (
-				C3BC5DFB1F94D6E900209D21 /* CoreDataManager.swift */,
+				08B96D532121C83F0050678C /* CloudKit101.entitlements */,
+				08B96D522121C83F0050678C /* CloudKitOperations.swift */,
 			);
-			path = CoreData;
+			path = CloudKit;
 			sourceTree = "<group>";
 		};
 		C3DEA4201F8E4A250005A89D = {
 			isa = PBXGroup;
 			children = (
+				0854C67E20E8652800055616 /* Default-568h@2x.png */,
 				08AB7E991FA12FDA00E6D05C /* TableFormCoreDataMini.png */,
 				0819BF0E1FA2104800AA7706 /* Controllers.png */,
 				08AB7E971FA0CEF300E6D05C /* README.md */,
-				C3DEA42B1F8E4A260005A89D /* TableFormCoreData */,
+				C3DEA42B1F8E4A260005A89D /* TableFormCloudKit */,
 				C3DEA42A1F8E4A260005A89D /* Products */,
+				08B96D562121CA590050678C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		C3DEA42A1F8E4A260005A89D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C3DEA4291F8E4A260005A89D /* TableFormCoreData.app */,
+				C3DEA4291F8E4A260005A89D /* TableFormCloudKit.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C3DEA42B1F8E4A260005A89D /* TableFormCoreData */ = {
+		C3DEA42B1F8E4A260005A89D /* TableFormCloudKit */ = {
 			isa = PBXGroup;
 			children = (
-				C3BC5DFA1F94D6D800209D21 /* CoreData */,
+				08B96D552121CA510050678C /* TableFormCloudKit.entitlements */,
+				C3BC5DFA1F94D6D800209D21 /* CloudKit */,
 				C3BC5DF91F94CE0500209D21 /* GenericTableView */,
 				C3BC5DF81F94CDDD00209D21 /* TableForm */,
-				C3BC5DF71F94CDC800209D21 /* model */,
 				C3DEA43D1F8E4A440005A89D /* EmployeeController.swift */,
 				C3DEA4461F8E4B050005A89D /* EmployeesController.swift */,
 				C3DEA42C1F8E4A260005A89D /* AppDelegate.swift */,
@@ -129,15 +134,15 @@
 				C3DEA4361F8E4A260005A89D /* Info.plist */,
 				C3DEA42E1F8E4A260005A89D /* TableFormCoreData.xcdatamodeld */,
 			);
-			path = TableFormCoreData;
+			path = TableFormCloudKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C3DEA4281F8E4A260005A89D /* TableFormCoreData */ = {
+		C3DEA4281F8E4A260005A89D /* TableFormCloudKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C3DEA4391F8E4A260005A89D /* Build configuration list for PBXNativeTarget "TableFormCoreData" */;
+			buildConfigurationList = C3DEA4391F8E4A260005A89D /* Build configuration list for PBXNativeTarget "TableFormCloudKit" */;
 			buildPhases = (
 				C3DEA4251F8E4A260005A89D /* Sources */,
 				C3DEA4261F8E4A260005A89D /* Frameworks */,
@@ -147,9 +152,9 @@
 			);
 			dependencies = (
 			);
-			name = TableFormCoreData;
+			name = TableFormCloudKit;
 			productName = TableFormCoreData;
-			productReference = C3DEA4291F8E4A260005A89D /* TableFormCoreData.app */;
+			productReference = C3DEA4291F8E4A260005A89D /* TableFormCloudKit.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -165,10 +170,21 @@
 					C3DEA4281F8E4A260005A89D = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
-			buildConfigurationList = C3DEA4241F8E4A250005A89D /* Build configuration list for PBXProject "TableFormCoreData" */;
+			buildConfigurationList = C3DEA4241F8E4A250005A89D /* Build configuration list for PBXProject "TableFormCloudKit" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -181,7 +197,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C3DEA4281F8E4A260005A89D /* TableFormCoreData */,
+				C3DEA4281F8E4A260005A89D /* TableFormCloudKit */,
 			);
 		};
 /* End PBXProject section */
@@ -196,6 +212,7 @@
 				0819BF0F1FA2104800AA7706 /* Controllers.png in Resources */,
 				C3DEA4321F8E4A260005A89D /* Assets.xcassets in Resources */,
 				C3DEA4351F8E4A260005A89D /* LaunchScreen.storyboard in Resources */,
+				0854C67F20E8652800055616 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,16 +224,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3DEA4421F8E4A440005A89D /* EmployeeController.swift in Sources */,
-				C3DEA45C1F8E530E0005A89D /* Employee.swift in Sources */,
 				C3DEA4441F8E4A440005A89D /* FormCells.swift in Sources */,
 				C3DEA4451F8E4A440005A89D /* FormViewController.swift in Sources */,
 				C3DEA4471F8E4B050005A89D /* EmployeesController.swift in Sources */,
 				C3DEA42D1F8E4A260005A89D /* AppDelegate.swift in Sources */,
 				08D8AE8420E06C28002B06D1 /* FormModel.swift in Sources */,
-				C3BC5DFC1F94D6E900209D21 /* CoreDataManager.swift in Sources */,
-				C3DEA45E1F8E530E0005A89D /* Gender.swift in Sources */,
 				C3DEA4431F8E4A440005A89D /* FormView.swift in Sources */,
 				C3DEA4411F8E4A440005A89D /* TableViewController.swift in Sources */,
+				08B96D542121C83F0050678C /* CloudKitOperations.swift in Sources */,
 				C3DEA4301F8E4A260005A89D /* TableFormCoreData.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,12 +365,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TableFormCloudKit/TableFormCloudKit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MA5BADG5AW;
-				INFOPLIST_FILE = TableFormCoreData/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TableFormCloudKit/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gazapps.TableFormCoreData;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gazapps.TableFormCloudKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -366,12 +382,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TableFormCloudKit/TableFormCloudKit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MA5BADG5AW;
-				INFOPLIST_FILE = TableFormCoreData/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TableFormCloudKit/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gazapps.TableFormCoreData;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gazapps.TableFormCloudKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -381,7 +398,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C3DEA4241F8E4A250005A89D /* Build configuration list for PBXProject "TableFormCoreData" */ = {
+		C3DEA4241F8E4A250005A89D /* Build configuration list for PBXProject "TableFormCloudKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C3DEA4371F8E4A260005A89D /* Debug */,
@@ -390,7 +407,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C3DEA4391F8E4A260005A89D /* Build configuration list for PBXNativeTarget "TableFormCoreData" */ = {
+		C3DEA4391F8E4A260005A89D /* Build configuration list for PBXNativeTarget "TableFormCloudKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C3DEA43A1F8E4A260005A89D /* Debug */,

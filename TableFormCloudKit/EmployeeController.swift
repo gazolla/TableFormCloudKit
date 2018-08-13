@@ -32,23 +32,23 @@ class EmployeeController: FormViewController {
     }()
     
     lazy var backButton: UIBarButtonItem = {
-        return UIBarButtonItem(title: "\u{25C0}Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(backTapped))
+        return UIBarButtonItem(image: UIImage(named: "back"), style: UIBarButtonItemStyle.plain, target: navigationController, action: #selector(UINavigationController.popViewController(animated:)))
     }()
     
     lazy override var selectedRow:((_ form:FormViewController, _ indexPath:IndexPath)->())? = { [weak self] (form,indexPath) in
         let cell = form.tableView.cellForRow(at: indexPath)
         cell?.isSelected = false
         if cell is LinkCell {
-            if (cell as! FormCell).name == "gender" {
+           /* if (cell as! FormCell).name == "gender" {
                 self?.navigationController?.pushViewController(self!.genderList, animated: true)
-            }
+            }*/
         }
     }
     
-    lazy var genderList = { ()-> TableViewController<Gender> in
+   /* lazy var genderList = { ()-> TableViewController<Gender> in
         let genders:[Gender] = {
             guard let context = context else { return [Gender]()}
-            return Gender.getGenders(context:context)
+            return [Gender]()
         }()
         
         let genderList = TableViewController(items:genders, cellType: UITableViewCell.self)
@@ -89,7 +89,7 @@ class EmployeeController: FormViewController {
         }
         genderList.title = "Gender"
         return genderList
-    }()
+    }()*/
     
     override init(){
         super.init()
@@ -117,15 +117,8 @@ class EmployeeController: FormViewController {
     }
 
     @objc func saveTapped(){
-        guard let context = context else { return }
         let dic = self.getFormData()
-        
-        do{
-            _ = try Employee.findOrCreate(dic:dic, in: context)
-            try context.save()
-        } catch {
-            print(error)
-        }
+        add(dic)
         self.view.endEditing(true)
         navigationController?.popViewController(animated: true)
     }

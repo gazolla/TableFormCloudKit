@@ -19,6 +19,11 @@ func iCloudSubscribe(){
     
     let info = CKNotificationInfo()
     info.shouldSendContentAvailable = true
+    
+    info.alertBody = "There's a new notification."
+    info.soundName = "default"
+    
+    
     subscription.notificationInfo = info
     
     database.save(subscription) { (savedSubscription, error) in
